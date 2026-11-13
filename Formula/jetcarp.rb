@@ -11,28 +11,28 @@
 class Jetcarp < Formula
   desc "Cellular automata on almost any tiling of the plane"
   homepage "https://jprodgers.github.io/jetcarp/"
-  version "0.4.0"
+  version "0.4.1"
   license any_of: ["Unlicense", "MIT"]
 
   on_macos do
     on_arm do
-      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.0/jetcarp-0.4.0-aarch64-apple-darwin.tar.gz"
-      sha256 "bdd9c6e433afc8f08588cf9a647025fb7dcac9e4ce990666c62e2c2956794448"
+      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.1/jetcarp-0.4.1-aarch64-apple-darwin.tar.gz"
+      sha256 "73e0a4cccd125bca2dca8c3da6f351aadb5ef214d77461d9fea207d6830f9686"
     end
     on_intel do
-      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.0/jetcarp-0.4.0-x86_64-apple-darwin.tar.gz"
-      sha256 "0ccfaa7ad64be4c2e82b9f189383002adfc3b343432c463b11c0d6a6d8170c94"
+      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.1/jetcarp-0.4.1-x86_64-apple-darwin.tar.gz"
+      sha256 "7e059a3118c59cda15cd235b88ed9a83aa5f52ffa32f9cc9a5c0e4c2b5ce2b2e"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.0/jetcarp-0.4.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "e9615b19abc9fa0b63f284088ff763f6158fd0a27c5a286c207e0471e1cd1963"
+      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.1/jetcarp-0.4.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "fb621740c7932dd55163250734272bd0ddaed34389a9e4a6150b7552300e0d59"
     end
     on_intel do
-      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.0/jetcarp-0.4.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "45ee5c92ceeeff3cfec4551cee86198e559f493ce0165c9b6ece4229aa533325"
+      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.1/jetcarp-0.4.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3455eac047c030059236a5e0077ff733ec3e2f2943753974b8b48580492c02c8"
     end
   end
 
