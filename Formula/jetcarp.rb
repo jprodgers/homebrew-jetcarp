@@ -11,28 +11,28 @@
 class Jetcarp < Formula
   desc "Cellular automata on almost any tiling of the plane"
   homepage "https://jprodgers.github.io/jetcarp/"
-  version "0.4.1"
+  version "0.4.2"
   license any_of: ["Unlicense", "MIT"]
 
   on_macos do
     on_arm do
-      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.1/jetcarp-0.4.1-aarch64-apple-darwin.tar.gz"
-      sha256 "73e0a4cccd125bca2dca8c3da6f351aadb5ef214d77461d9fea207d6830f9686"
+      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.2/jetcarp-0.4.2-aarch64-apple-darwin.tar.gz"
+      sha256 "46eb5a57251dbe155dd3148e052be4e035a9c3dcd6ae61a9a01495b0e90e47f7"
     end
     on_intel do
-      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.1/jetcarp-0.4.1-x86_64-apple-darwin.tar.gz"
-      sha256 "7e059a3118c59cda15cd235b88ed9a83aa5f52ffa32f9cc9a5c0e4c2b5ce2b2e"
+      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.2/jetcarp-0.4.2-x86_64-apple-darwin.tar.gz"
+      sha256 "d9631c0caf810b8f08e92dea7b9cdb09bfd3491841dca703ee48a17adcf20040"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.1/jetcarp-0.4.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "fb621740c7932dd55163250734272bd0ddaed34389a9e4a6150b7552300e0d59"
+      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.2/jetcarp-0.4.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1258204f9e5ab472d7b866d8c0caec983fe6be2233d5198cd00d8db2c0d111e2"
     end
     on_intel do
-      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.1/jetcarp-0.4.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "3455eac047c030059236a5e0077ff733ec3e2f2943753974b8b48580492c02c8"
+      url "https://github.com/jprodgers/jetcarp/releases/download/v0.4.2/jetcarp-0.4.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "d1517c0b431e0023041631b242faf113aedaf6a5530e9485b554cbeadf8524db"
     end
   end
 
@@ -47,10 +47,16 @@ class Jetcarp < Formula
     prefix.install "COPYING", "UNLICENSE", "LICENSE-MIT"
   end
 
+  # No post_install step registers the login item with launchd: Homebrew may run it in a sandbox.
+  # The program does it itself when the app or the host starts.
   def caveats
     <<~EOS
       Before `brew uninstall jetcarp`, run `jetcarp uninstall` to undo what JETCARP set up
       outside its folders (the background host, login item and screen saver).
+
+      On macOS, after `brew upgrade jetcarp`: if the desktop background starts at login, open
+      the JETCARP app or run `jetcarp host start` once, so that macOS accepts the new version
+      at login.
     EOS
   end
 
